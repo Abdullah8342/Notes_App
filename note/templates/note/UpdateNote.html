@@ -1,0 +1,15 @@
+{% extends 'note/base.html' %}
+{% block title %}
+Updated Notes
+{% endblock %}
+{% block body %}
+<h1>Update Notes</h1>
+<a href="{% url 'NoteView' %}">Go Back</a>
+<div>
+   <form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Save">
+   </form>
+</div>
+{% endblock %}

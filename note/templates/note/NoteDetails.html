@@ -1,0 +1,14 @@
+{% extends 'note/base.html' %}
+{% block title %}
+Notes Detail
+{% endblock %}
+{% block body %}
+<h1>Note Detail</h1>
+<a href="{% url 'NoteView' %}">Go Back</a>
+<div>
+    <h3>{{note.title}}</h3>
+    <p>{{note.content}}</p>
+    <p>Created at :- {{note.created_at}}</p>
+    <p>Updated at :- {{note.updated_at}}</p>
+</div>
+{% endblock %}

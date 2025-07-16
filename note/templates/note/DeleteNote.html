@@ -1,0 +1,14 @@
+{% extends 'note/base.html' %}
+{% block title %}
+Notes Detail
+{% endblock %}
+{% block body %}
+<h1>Note Detail</h1>
+<a href="{% url 'NoteView' %}">Go Back</a>
+<div>
+    <form action="" method="post">
+        {% csrf_token %}
+        <button type="submit">Are you sure you want to Delete Note</button>
+    </form>
+</div>
+{% endblock %}

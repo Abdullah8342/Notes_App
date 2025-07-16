@@ -1,0 +1,24 @@
+{% extends 'note/base.html' %}
+{% block title %}
+View Notes
+{% endblock %}
+{% block body %}
+<h1>Notes</h1>
+<a href="{% url 'NoteCreate' %}">Add Note</a>
+<div>
+    <form action="" method="get">
+        <input type="text" placeholder="Search hare" name="q">
+        <button type="submit">Search</button>
+    </form>
+    {% for note in notes %}
+    <h3>{{note.title}}</h3>
+    <p>
+        <a href="{% url 'DetailNote' note.id %}">Detail</a>
+        <a href="{% url 'DeleteNote' note.id %}">Delete</a>
+        <a href="{% url 'UpdateNote' note.id %}">Edit</a>
+    </p>
+    {% empty %}
+    <p>No Note Found</p>
+    {% endfor %}
+</div>
+{% endblock %}

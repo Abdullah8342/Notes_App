@@ -1,0 +1,12 @@
+{% extends 'note/base.html' %}
+{% block title %}
+Login
+{% endblock %}
+{% block body %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Login</button>
+</form>
+<a href="{% url 'signup' %}">Don't have Account ? signup here</a>
+{% endblock %}
